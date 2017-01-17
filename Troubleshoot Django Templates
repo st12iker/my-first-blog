@@ -1,0 +1,11 @@
+mproperlyConfigured: You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings
+
+> http://tinyurl.com/p32tt33
+
+Django 1.7 throws django.core.exceptions.AppRegistryNotReady: Models aren't loaded yet
+
+> import django
+> django.setup()
+
+
+ Django looks for an environment variable called DJANGO_SETTINGS_MODULE, which should be set to the import path of your settings.py. For example, DJANGO_SETTINGS_MODULE might be set to 'mysite.settings', assuming mysite is on your Python path.When you run python manage.py shell, the command takes care of setting DJANGO_SETTINGS_MODULE for you. You will need to use python manage.py shell in these examples, or Django will throw an exception.
